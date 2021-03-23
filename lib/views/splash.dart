@@ -21,6 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
       },
       child: SafeArea(
         child: Scaffold(
+          backgroundColor: homeBgColor,
           body: Hero(
             tag: 'splash',
             child: Container(
