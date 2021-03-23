@@ -21,25 +21,57 @@ class _SplashScreenState extends State<SplashScreen> {
       },
       child: SafeArea(
         child: Scaffold(
-          backgroundColor: homeBgColor,
-          body: Hero(
-            tag: 'splash',
-            child: Container(
-                color: mainTextColor,
-                child: Center(
-                  child: Text(
-                    'MECL',
-                    style: TextStyle(
-                      fontFamily: 'Bambino',
-                      letterSpacing: 0.5,
-                      fontSize: ScreenUtil().setSp(90),
-                      color: mainBgColor,
-                      fontWeight: FontWeight.w400,
+            backgroundColor: homeBgColor,
+            body: Column(
+              children: [
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      decoration: BoxDecoration(color: mainBgColor),
                     ),
-                  ),
-                )),
-          ),
-        ),
+                    Container(
+                      color: mainBgColor,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: <Widget>[
+                          Expanded(
+                            flex: 5,
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(vertical: 50),
+                              child: Center(
+                                child: CircleAvatar(
+                                  backgroundColor: mainBgColor,
+                                  backgroundImage:
+                                      AssetImage('images/splash.png'),
+                                  radius: 100.0,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                              flex: 1,
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 20),
+                                child: Center(
+                                  child: Text(
+                                    "MEC APP",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 50,
+                                      fontFamily: 'JosefinSans-Semi',
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                ),
+                              )),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            )),
       ),
     );
   }
