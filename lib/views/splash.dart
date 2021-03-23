@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
                                 child: CircleAvatar(
                                   backgroundColor: mainBgColor,
                                   backgroundImage:
-                                      AssetImage('images/splash.png'),
+                                      AssetImage('assets/images/logoAv1.png'),
                                   radius: 100.0,
                                 ),
                               ),
@@ -55,7 +55,7 @@ class _SplashScreenState extends State<SplashScreen> {
                                 padding: const EdgeInsets.only(top: 20),
                                 child: Center(
                                   child: Text(
-                                    "MEC APP",
+                                    "Acharya",
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 50,
