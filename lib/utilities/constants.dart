@@ -11,8 +11,4 @@ final Color fadeTextColor = Color(0xFF8B8A8F);
 final Color darkFadeTextColor = Color(0xFF60606A);
 final Color lightFadeText = Colors.white70;
 final Color bottomNavbarColor = Color(0xFF000000);
-final Color phoneButtonColor = Color(0xFFF3A913);
-
-List imgList = [
-  'images/login9.jpg',
-];
+final Color whiteColor = Color(0xFFFFFFFF);
