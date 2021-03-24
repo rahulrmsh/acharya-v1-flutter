@@ -62,7 +62,7 @@ final places = [
   'New Fertoom',
   'Pikesfham',
   'South Karnabe',
-  'Nchofourche Du Jonmoe Valley',
+  'Nchofourche',
   'West Getoche',
   'Wyongwood',
   'Park Ventters',

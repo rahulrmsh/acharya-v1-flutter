@@ -148,7 +148,7 @@ class _StudentHomeScreenState extends State<StudentHomeScreen> {
                   color: fadeTextColor.withOpacity(0.4),
                 ),
                 Container(
-                  height: height * 0.25,
+                  height: height * 0.24,
                   padding: EdgeInsets.only(
                     left: 20,
                     top: 10,
@@ -167,7 +167,9 @@ class _StudentHomeScreenState extends State<StudentHomeScreen> {
                               right: width * 0.1,
                             ),
                             child: FadeInImage.assetNetwork(
-                              placeholder: 'assets/loading.gif',
+                              height: height * 0.20,
+                              fadeInDuration: Duration(milliseconds: 200),
+                              placeholder: 'assets/images/face.png',
                               repeat: ImageRepeat.repeatX,
                               fit: BoxFit.contain,
                               image: 'https://picsum.photos/id/$index/120/150',
