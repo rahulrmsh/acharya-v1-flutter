@@ -3,6 +3,8 @@ import 'package:acharya1/views/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'views/Welcome/Login/student.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
@@ -25,6 +27,7 @@ class _MainAppState extends State<MainApp> {
       routes: {
         'splash': (context) => SplashScreen(),
         'welcome': (context) => WelcomeScreen(),
+        'studentLogin': (context) => StudentLoginScreen(),
       },
     );
   }
