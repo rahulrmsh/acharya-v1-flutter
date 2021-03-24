@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'views/Welcome/Login/student.dart';
+import 'views/Welcome/Login/tutor.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,6 +29,7 @@ class _MainAppState extends State<MainApp> {
         'splash': (context) => SplashScreen(),
         'welcome': (context) => WelcomeScreen(),
         'studentLogin': (context) => StudentLoginScreen(),
+        'tutorLogin': (context) => TutorLoginScreen(),
       },
     );
   }
