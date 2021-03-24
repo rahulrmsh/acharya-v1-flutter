@@ -2,6 +2,7 @@ import 'package:acharya1/views/welcome/welcome.dart';
 import 'package:acharya1/views/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'views/home/student.dart';
 import 'views/welcome/login/student.dart';
 import 'views/welcome/login/tutor.dart';
 
@@ -29,6 +30,7 @@ class _MainAppState extends State<MainApp> {
         'welcome': (context) => WelcomeScreen(),
         'studentLogin': (context) => StudentLoginScreen(),
         'tutorLogin': (context) => TutorLoginScreen(),
+        'studentHome': (context) => StudentHomeScreen(),
       },
     );
   }

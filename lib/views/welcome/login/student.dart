@@ -204,6 +204,7 @@ We've Missed You''',
                         ),
                       ),
                       onPressed: () {
+                        Navigator.pushNamed(context, 'studentHome');
                         print('Pressed');
                       },
                     ),
