@@ -1,7 +1,10 @@
 import 'package:acharya1/utilities/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+bool _lights = true;
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -58,6 +61,61 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     textAlign: TextAlign.center,
                   ),
                 ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: height * 0.05),
+                child: Center(
+                  child: Text(
+                    "Join the world of learning",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: homeBgColor,
+                      fontFamily: 'Bambino',
+                      letterSpacing: 0.5,
+                      fontSize: ScreenUtil().setSp(60),
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+              ),
+              MergeSemantics(
+                child: ListTile(
+                  title: Text(
+                    'Student Demo',
+                    style: GoogleFonts.openSans(
+                      color: fadeTextColor,
+                      fontSize: ScreenUtil().setSp(45),
+                      fontWeight: FontWeight.w400,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                  trailing: CupertinoSwitch(
+                    activeColor: homeBgColor,
+                    value: _lights,
+                    onChanged: (bool value) {
+                      setState(() {
+                        _lights = value;
+                      });
+                    },
+                  ),
+                  onTap: () {
+                    setState(() {
+                      _lights = !_lights;
+                    });
+                  },
+                ),
+              ),
+              Wrap(
+                children: <Widget>[
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: null,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: null,
+                  ),
+                ],
               ),
             ],
           ),
