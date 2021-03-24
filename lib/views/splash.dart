@@ -36,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     Center(
                       child: Image(
                         height: ScreenUtil().setHeight(820),
-                        image: AssetImage('assets/images/logoAv1.png'),
+                        image: AssetImage('assets/images/ACH2.png'),
                       ),
                     ),
                     Padding(
