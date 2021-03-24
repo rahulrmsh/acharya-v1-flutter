@@ -27,7 +27,10 @@ class _StudentLoginScreenState extends State<StudentLoginScreen> {
         child: Scaffold(
           resizeToAvoidBottomInset: false,
           floatingActionButton: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: EdgeInsets.symmetric(
+              vertical: height * 0.025,
+              horizontal: width * 0.025,
+            ),
             child: FloatingActionButton(
               mini: true,
               heroTag: "btn1",
@@ -43,46 +46,40 @@ class _StudentLoginScreenState extends State<StudentLoginScreen> {
           ),
           floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
           body: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: width * 0.05,
-              vertical: height * 0.15,
+            padding: EdgeInsets.only(
+              left: width * 0.05,
+              right: width * 0.05,
+              top: height * 0.15,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Let's sign you in",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        color: homeBgColor,
-                        fontSize: ScreenUtil().setSp(75),
-                        fontFamily: 'Bambino',
-                        letterSpacing: 0.5,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    Text(
-                      '''Welcome Back
+                Text(
+                  "Let's sign you in",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    color: homeBgColor,
+                    fontSize: ScreenUtil().setSp(75),
+                    fontFamily: 'Bambino',
+                    letterSpacing: 0.5,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                Text(
+                  '''Welcome Back
 We've Missed You''',
-                      textAlign: TextAlign.left,
-                      style: GoogleFonts.openSans(
-                        fontSize: ScreenUtil().setSp(60),
-                        fontWeight: FontWeight.w400,
-                        color: fadeTextColor,
-                      ),
-                    ),
-                  ],
+                  textAlign: TextAlign.left,
+                  style: GoogleFonts.openSans(
+                    fontSize: ScreenUtil().setSp(60),
+                    fontWeight: FontWeight.w400,
+                    color: fadeTextColor,
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.1,
-                    left: 25,
-                    right: 25,
+                    top: height * 0.1,
                   ),
-                  child: TextField(
+                  child: TextFormField(
                     controller: _mailController,
                     onChanged: (value) {
                       setState(() {
@@ -91,26 +88,29 @@ We've Missed You''',
                     },
                     keyboardType: TextInputType.emailAddress,
                     style: TextStyle(
-                      color: mainBgColor,
-                      fontSize: 18,
+                      color: darkFadeTextColor,
+                      fontSize: ScreenUtil().setSp(60),
                       fontWeight: FontWeight.w600,
                     ),
                     decoration: InputDecoration(
-                      labelStyle: TextStyle(
-                        color: darkFadeTextColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: blackColor, width: 1.0),
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
-                      border: InputBorder.none,
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
+                      labelStyle: TextStyle(
+                        color: fadeTextColor,
+                        fontSize: ScreenUtil().setSp(45),
+                        fontWeight: FontWeight.w400,
+                      ),
                       labelText: 'Enter Email',
                     ),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                    top: 25,
-                    left: 25,
-                    right: 25,
+                    top: height * 0.02,
                   ),
                   child: TextField(
                     controller: _passController,
@@ -122,109 +122,90 @@ We've Missed You''',
                       });
                     },
                     style: TextStyle(
-                      color: mainBgColor,
-                      fontSize: 18,
+                      color: darkFadeTextColor,
+                      fontSize: ScreenUtil().setSp(60),
                       fontWeight: FontWeight.w600,
                     ),
                     decoration: InputDecoration(
-                      labelStyle: TextStyle(
-                        color: darkFadeTextColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: blackColor, width: 1.0),
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
-                      border: InputBorder.none,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(
+                          10.0,
+                        ),
+                      ),
+                      labelStyle: TextStyle(
+                        color: fadeTextColor,
+                        fontSize: ScreenUtil().setSp(45),
+                        fontWeight: FontWeight.w400,
+                      ),
                       labelText: 'Enter Password',
                     ),
                   ),
                 ),
-                // Column(
-                //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                //   children: [
-                // Padding(
-                //   padding: const EdgeInsets.all(8.0),
-                //   child: SignInButton(
-                //     Buttons.Email,
-                //     padding: EdgeInsets.symmetric(
-                //         vertical: height * 0.02, horizontal: width * 0.1),
-                //     text: "Log in with Email",
-                //     onPressed: () {
-                //       Navigator.pushNamed(context, 'email');
-                //     },
-                //     elevation: 5,
-                //   ),
-                // ),
-                // Padding(
-                //   padding: const EdgeInsets.all(8.0),
-                //   child: SignInButton(
-                //     Buttons.Facebook,
-                //     padding: EdgeInsets.symmetric(
-                //         vertical: height * 0.02, horizontal: width * 0.1),
-                //     text: "Log in with Facebook",
-                //     onPressed: () {
-                //       Navigator.pushNamed(context, 'profile');
-                //     },
-                //   ),
-                // ),
-                // Padding(
-                //   padding: const EdgeInsets.all(8.0),
-                //   child: SignInButton(
-                //     Buttons.Google,
-                //     padding: EdgeInsets.symmetric(
-                //         vertical: height * 0.01, horizontal: width * 0.1),
-                //     text: "Log in with Google",
-                //     onPressed: () {
-                //       Navigator.pushNamed(context, 'profile');
-                //     },
-                //   ),
-                // ),
-                // Padding(
-                //   padding: const EdgeInsets.all(8.0),
-                //   child: SignInButton(
-                //     Buttons.Twitter,
-                //     padding: EdgeInsets.symmetric(
-                //         vertical: height * 0.02, horizontal: width * 0.1),
-                //     text: "Log in with Twitter",
-                //     onPressed: () {},
-                //   ),
-                // ),
-                //   ],
-                // ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Container(
-                    padding: EdgeInsets.only(
-                        bottom: height * 0.025, top: height * 0.29),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '''Don't have an account?  ''',
+                SizedBox(
+                  height: height * 0.2,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    bottom: height * 0.025,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        '''Don't have an account?  ''',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.openSans(
+                          fontSize: ScreenUtil().setSp(40),
+                          fontWeight: FontWeight.w400,
+                          color: fadeTextColor,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          // Navigator.of(context).pushReplacement(
+                          //   CupertinoPageRoute<bool>(
+                          //     builder: (BuildContext context) => SignIn(),
+                          //   ),
+                          // );
+                        },
+                        child: Text(
+                          '''Sign Up''',
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.raleway(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
+                          style: GoogleFonts.openSans(
+                            fontSize: ScreenUtil().setSp(40),
+                            fontWeight: FontWeight.w500,
                             color: darkFadeTextColor,
                           ),
                         ),
-                        GestureDetector(
-                          onTap: () {
-                            // Navigator.of(context).pushReplacement(
-                            //   CupertinoPageRoute<bool>(
-                            //     builder: (BuildContext context) => SignIn(),
-                            //   ),
-                            // );
-                          },
-                          child: Text(
-                            '''Sign Up''',
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.raleway(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              color: blackColor,
-                            ),
-                          ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: width,
+                  height: height * 0.08,
+                  decoration: BoxDecoration(
+                    color: homeBgColor,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Center(
+                    child: TextButton(
+                      child: Text(
+                        'Login',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.openSans(
+                          color: whiteColor,
+                          fontSize: ScreenUtil().setSp(45),
+                          fontWeight: FontWeight.w700,
                         ),
-                      ],
+                      ),
+                      onPressed: () {
+                        print('Pressed');
+                      },
                     ),
                   ),
                 )
