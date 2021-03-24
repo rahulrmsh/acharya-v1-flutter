@@ -1,4 +1,5 @@
 import 'package:acharya1/utilities/constants.dart';
+import 'package:acharya1/views/profile/tutor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -138,140 +139,157 @@ class _StudentHomeScreenState extends State<StudentHomeScreen> {
         body: ListView.builder(
           itemCount: 15,
           itemBuilder: (BuildContext ctxt, int index) {
-            return Column(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(0),
-                  margin: EdgeInsets.all(0),
-                  width: width,
-                  height: 2,
-                  color: fadeTextColor.withOpacity(0.4),
-                ),
-                Container(
-                  height: height * 0.24,
-                  padding: EdgeInsets.only(
-                    left: 20,
-                    top: 10,
-                    bottom: 10,
-                    right: 20,
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(
-                              right: width * 0.1,
-                            ),
-                            child: FadeInImage.assetNetwork(
-                              height: height * 0.20,
-                              fadeInDuration: Duration(milliseconds: 200),
-                              placeholder: 'assets/images/face.png',
-                              repeat: ImageRepeat.repeatX,
-                              fit: BoxFit.contain,
-                              image: 'https://picsum.photos/id/$index/120/150',
-                            ),
-                          ),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  names[index],
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                    color: blackColor,
-                                    fontSize: ScreenUtil().setSp(45),
-                                    fontFamily: 'Bambino',
-                                    letterSpacing: 0.5,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                                Text(
-                                  jobs[index],
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 5,
-                                  textAlign: TextAlign.left,
-                                  style: GoogleFonts.openSans(
-                                    fontSize: ScreenUtil().setSp(35),
-                                    fontWeight: FontWeight.w400,
-                                    color: fadeTextColor,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    vertical: 6,
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                          right: 8,
-                                        ),
-                                        child: Icon(
-                                          FontAwesomeIcons.mapMarkerAlt,
-                                          size: ScreenUtil().setSp(40),
-                                          color: fadeTextColor,
-                                        ),
-                                      ),
-                                      Text(
-                                        places[index],
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 5,
-                                        textAlign: TextAlign.left,
-                                        style: GoogleFonts.openSans(
-                                          fontSize: ScreenUtil().setSp(37),
-                                          fontWeight: FontWeight.w400,
-                                          color: fadeTextColor,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    vertical: 6,
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                          right: 8,
-                                        ),
-                                        child: Icon(
-                                          FontAwesomeIcons.rupeeSign,
-                                          size: ScreenUtil().setSp(40),
-                                          color: fadeTextColor,
-                                        ),
-                                      ),
-                                      Text(
-                                        (index + 100).toString(),
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 5,
-                                        textAlign: TextAlign.left,
-                                        style: GoogleFonts.openSans(
-                                          fontSize: ScreenUtil().setSp(37),
-                                          fontWeight: FontWeight.w400,
-                                          color: fadeTextColor,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
+            return GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => TutorProfileScreen(
+                    imageUrl: 'https://picsum.photos/id/$index/120/150',
+                    area: places[index],
+                    name: names[index],
+                    qualification: jobs[index],
+                    salary: index,
                   ),
                 ),
-              ],
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(0),
+                    margin: EdgeInsets.all(0),
+                    width: width,
+                    height: 2,
+                    color: fadeTextColor.withOpacity(0.4),
+                  ),
+                  Container(
+                    height: height * 0.24,
+                    padding: EdgeInsets.only(
+                      left: 20,
+                      top: 10,
+                      bottom: 10,
+                      right: 20,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(
+                                right: width * 0.1,
+                              ),
+                              child: FadeInImage.assetNetwork(
+                                height: height * 0.20,
+                                fadeInDuration: Duration(milliseconds: 200),
+                                placeholder: 'assets/images/face.png',
+                                repeat: ImageRepeat.repeatX,
+                                fit: BoxFit.contain,
+                                image:
+                                    'https://picsum.photos/id/$index/120/150',
+                              ),
+                            ),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    names[index],
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                      color: blackColor,
+                                      fontSize: ScreenUtil().setSp(45),
+                                      fontFamily: 'Bambino',
+                                      letterSpacing: 0.5,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  Text(
+                                    jobs[index],
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 5,
+                                    textAlign: TextAlign.left,
+                                    style: GoogleFonts.openSans(
+                                      fontSize: ScreenUtil().setSp(35),
+                                      fontWeight: FontWeight.w400,
+                                      color: fadeTextColor,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: 6,
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                            right: 8,
+                                          ),
+                                          child: Icon(
+                                            FontAwesomeIcons.mapMarkerAlt,
+                                            size: ScreenUtil().setSp(40),
+                                            color: fadeTextColor,
+                                          ),
+                                        ),
+                                        Text(
+                                          places[index],
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 5,
+                                          textAlign: TextAlign.left,
+                                          style: GoogleFonts.openSans(
+                                            fontSize: ScreenUtil().setSp(37),
+                                            fontWeight: FontWeight.w400,
+                                            color: fadeTextColor,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: 6,
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                            right: 8,
+                                          ),
+                                          child: Icon(
+                                            FontAwesomeIcons.rupeeSign,
+                                            size: ScreenUtil().setSp(40),
+                                            color: fadeTextColor,
+                                          ),
+                                        ),
+                                        Text(
+                                          (index + 100).toString(),
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 5,
+                                          textAlign: TextAlign.left,
+                                          style: GoogleFonts.openSans(
+                                            fontSize: ScreenUtil().setSp(37),
+                                            fontWeight: FontWeight.w400,
+                                            color: fadeTextColor,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             );
           },
         ),
