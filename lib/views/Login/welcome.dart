@@ -19,10 +19,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         backgroundColor: whiteColor,
         body: Column(
           children: [
-            Center(
-              child: Image(
-                height: height * 0.4,
-                image: AssetImage('assets/images/ACH2.png'),
+            Padding(
+              padding: EdgeInsets.all(height * 0.05),
+              child: Center(
+                child: Image(
+                  height: height * 0.4,
+                  image: AssetImage('assets/images/welcome03.png'),
+                ),
               ),
             ),
             Padding(
