@@ -44,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       child: Center(
                         child: Text(
                           "ACHARYA",
-                          style: GoogleFonts.josefinSans(
+                          style: GoogleFonts.lato(
                             color: Colors.white,
                             fontSize: ScreenUtil().setSp(120),
                             fontWeight: FontWeight.w700,
@@ -53,13 +53,13 @@ class _SplashScreenState extends State<SplashScreen> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: height * 0.02),
+                      padding: EdgeInsets.only(top: height * 0.01),
                       child: Center(
                         child: Text(
                           "learning made easy",
                           style: GoogleFonts.josefinSans(
                             color: Colors.white,
-                            fontSize: ScreenUtil().setSp(120),
+                            fontSize: ScreenUtil().setSp(85),
                             fontWeight: FontWeight.w700,
                           ),
                         ),
