@@ -67,7 +67,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       padding: EdgeInsets.only(top: height * 0.01),
                       child: Center(
                         child: Text(
-                          "learning made easy",
+                          "Lorem ipsum dolor sit amet",
                           style: GoogleFonts.josefinSans(
                             color: Colors.white,
                             fontSize: ScreenUtil().setSp(70),
