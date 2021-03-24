@@ -40,13 +40,13 @@ class _SplashScreenState extends State<SplashScreen> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: height * 0.015),
+                      padding: EdgeInsets.only(top: height * 0.02),
                       child: Center(
                         child: Text(
-                          "Acharya",
-                          style: GoogleFonts.montserrat(
+                          "ACHARYA",
+                          style: GoogleFonts.josefinSans(
                             color: Colors.white,
-                            fontSize: 50,
+                            fontSize: ScreenUtil().setSp(120),
                             fontWeight: FontWeight.w700,
                           ),
                         ),
