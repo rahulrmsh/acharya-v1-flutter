@@ -172,7 +172,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                 ),
                               ),
                               onPressed: () {
-                                print('Pressed');
+                                Navigator.pushNamed(context, 'tutorLogin');
                               },
                             ),
                           ),

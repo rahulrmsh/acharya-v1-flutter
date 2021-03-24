@@ -1,10 +1,9 @@
-import 'package:acharya1/views/Welcome/welcome.dart';
+import 'package:acharya1/views/welcome/welcome.dart';
 import 'package:acharya1/views/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'views/Welcome/Login/student.dart';
-import 'views/Welcome/Login/tutor.dart';
+import 'views/welcome/login/student.dart';
+import 'views/welcome/login/tutor.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
