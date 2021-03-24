@@ -15,7 +15,7 @@ class _StudentLoginScreenState extends State<StudentLoginScreen> {
     ScreenUtil.init(context,
         designSize: Size(1080, 2400), allowFontScaling: false);
     final height = ScreenUtil().setHeight(2400);
-    final width = ScreenUtil().setHeight(1800);
+    // final width = ScreenUtil().setHeight(1800);
     return SafeArea(
       child: SafeArea(
         child: Scaffold(
@@ -42,25 +42,27 @@ class _StudentLoginScreenState extends State<StudentLoginScreen> {
                 padding:
                     EdgeInsets.only(top: height * 0.155, bottom: height * 0.05),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Center(
-                      child: Text(
-                        'Log in to TikTok',
-                        style: GoogleFonts.raleway(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w700,
-                          color: mainTextColor,
-                        ),
+                    Text(
+                      "Let's sign you in",
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        color: homeBgColor,
+                        fontSize: ScreenUtil().setSp(75),
+                        fontFamily: 'Bambino',
+                        letterSpacing: 0.5,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                     Center(
                       child: Text(
-                        '''Manage your account, check notifications,
-comment on videos, and more.''',
-                        textAlign: TextAlign.center,
+                        '''Welcome Back
+We've Missed You''',
+                        textAlign: TextAlign.left,
                         style: GoogleFonts.raleway(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
+                          fontSize: ScreenUtil().setSp(60),
+                          fontWeight: FontWeight.w300,
                           color: fadeTextColor,
                         ),
                       ),
