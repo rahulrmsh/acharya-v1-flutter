@@ -105,17 +105,24 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   },
                 ),
               ),
-              Wrap(
-                children: <Widget>[
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: null,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: null,
-                  ),
-                ],
+              Container(
+                color: homeBgColor,
+                child: Wrap(
+                  children: <Widget>[
+                    ElevatedButton(
+                      child: Text('Student'),
+                      onPressed: () {
+                        print('Pressed');
+                      },
+                    ),
+                    ElevatedButton(
+                      child: Text('Tutor'),
+                      onPressed: () {
+                        print('Pressed');
+                      },
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
