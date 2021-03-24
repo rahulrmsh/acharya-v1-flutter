@@ -44,10 +44,12 @@ class _SplashScreenState extends State<SplashScreen> {
                       child: Center(
                         child: Text(
                           "ACHARYA",
-                          style: GoogleFonts.lato(
+                          style: TextStyle(
                             color: Colors.white,
-                            fontSize: ScreenUtil().setSp(120),
-                            fontWeight: FontWeight.w700,
+                            fontFamily: 'Bambino',
+                            letterSpacing: 0.5,
+                            fontSize: ScreenUtil().setSp(90),
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
                       ),
