@@ -1,3 +1,4 @@
+import 'package:acharya1/views/Login/welcome.dart';
 import 'package:acharya1/views/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -23,6 +24,7 @@ class _MainAppState extends State<MainApp> {
       initialRoute: 'splash',
       routes: {
         'splash': (context) => SplashScreen(),
+        'welcome': (context) => WelcomeScreen(),
       },
     );
   }
