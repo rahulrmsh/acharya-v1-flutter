@@ -1,5 +1,5 @@
 import 'package:acharya1/views/welcome/welcome.dart';
-import 'package:acharya1/views/splash.dart';
+import 'package:acharya1/views/welcome/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'views/home/student.dart';
