@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-bool _lights = true;
+// bool _lights = true;
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -63,7 +63,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: height * 0.05),
+                padding: EdgeInsets.only(top: height * 0.04),
                 child: Center(
                   child: Text(
                     "Join the world of learning",
@@ -78,50 +78,107 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ),
                 ),
               ),
-              MergeSemantics(
-                child: ListTile(
-                  title: Text(
-                    'Student Demo',
-                    style: GoogleFonts.openSans(
-                      color: fadeTextColor,
-                      fontSize: ScreenUtil().setSp(45),
-                      fontWeight: FontWeight.w400,
-                    ),
-                    textAlign: TextAlign.left,
+              // MergeSemantics(
+              //   child: ListTile(
+              //     title: Text(
+              //       'Student Demo',
+              //       style: GoogleFonts.openSans(
+              //         color: fadeTextColor,
+              //         fontSize: ScreenUtil().setSp(45),
+              //         fontWeight: FontWeight.w400,
+              //       ),
+              //       textAlign: TextAlign.left,
+              //     ),
+              //     trailing: CupertinoSwitch(
+              //       activeColor: homeBgColor,
+              //       value: _lights,
+              //       onChanged: (bool value) {
+              //         setState(() {
+              //           _lights = value;
+              //         });
+              //       },
+              //     ),
+              //     onTap: () {
+              //       setState(() {
+              //         _lights = !_lights;
+              //       });
+              //     },
+              //   ),
+              // ),
+              Padding(
+                padding: EdgeInsets.only(top: height * 0.04),
+                child: Container(
+                  width: width,
+                  height: height * 0.08,
+                  decoration: BoxDecoration(
+                    color: homeBgColor,
+                    borderRadius: BorderRadius.circular(12),
                   ),
-                  trailing: CupertinoSwitch(
-                    activeColor: homeBgColor,
-                    value: _lights,
-                    onChanged: (bool value) {
-                      setState(() {
-                        _lights = value;
-                      });
-                    },
+                  child: Padding(
+                    padding: EdgeInsets.all(5.0),
+                    child: Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            width: width * 0.27,
+                            height: height * 0.06,
+                            decoration: BoxDecoration(
+                              color: whiteColor,
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(12),
+                                bottomLeft: Radius.circular(12),
+                              ),
+                            ),
+                            child: TextButton(
+                              child: Text(
+                                'Student',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.openSans(
+                                  color: homeBgColor,
+                                  fontSize: ScreenUtil().setSp(45),
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                              onPressed: () {
+                                print('Pressed');
+                              },
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 10),
+                            color: Colors.grey.withOpacity(0.4),
+                            width: 2,
+                          ),
+                          Container(
+                            width: width * 0.27,
+                            height: height * 0.06,
+                            decoration: BoxDecoration(
+                              color: whiteColor,
+                              borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(12),
+                                bottomRight: Radius.circular(12),
+                              ),
+                            ),
+                            child: TextButton(
+                              child: Text(
+                                'Tutor',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.openSans(
+                                  color: homeBgColor,
+                                  fontSize: ScreenUtil().setSp(45),
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                              onPressed: () {
+                                print('Pressed');
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                  onTap: () {
-                    setState(() {
-                      _lights = !_lights;
-                    });
-                  },
-                ),
-              ),
-              Container(
-                color: homeBgColor,
-                child: Wrap(
-                  children: <Widget>[
-                    ElevatedButton(
-                      child: Text('Student'),
-                      onPressed: () {
-                        print('Pressed');
-                      },
-                    ),
-                    ElevatedButton(
-                      child: Text('Tutor'),
-                      onPressed: () {
-                        print('Pressed');
-                      },
-                    ),
-                  ],
                 ),
               ),
             ],
