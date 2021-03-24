@@ -52,6 +52,19 @@ class _SplashScreenState extends State<SplashScreen> {
                         ),
                       ),
                     ),
+                    Padding(
+                      padding: EdgeInsets.only(top: height * 0.02),
+                      child: Center(
+                        child: Text(
+                          "learning made easy",
+                          style: GoogleFonts.josefinSans(
+                            color: Colors.white,
+                            fontSize: ScreenUtil().setSp(120),
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ],
