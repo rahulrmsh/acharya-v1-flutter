@@ -14,49 +14,53 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     ScreenUtil.init(context,
         designSize: Size(1080, 2400), allowFontScaling: false);
     final height = ScreenUtil().setHeight(2400);
+    final width = ScreenUtil().setHeight(1800);
     return SafeArea(
       child: Scaffold(
         backgroundColor: whiteColor,
-        body: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.all(height * 0.05),
-              child: Center(
+        body: Padding(
+          padding: EdgeInsets.symmetric(
+              vertical: height * 0.05, horizontal: width * 0.05),
+          child: Column(
+            children: [
+              Center(
                 child: Image(
                   height: height * 0.4,
-                  image: AssetImage('assets/images/welcome03.png'),
+                  image: AssetImage('assets/images/welcome01.png'),
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: height * 0.04),
-              child: Center(
-                child: Text(
-                  "Lorem ipsum dolor sit amet",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'Bambino',
-                    letterSpacing: 0.5,
-                    fontSize: ScreenUtil().setSp(90),
-                    fontWeight: FontWeight.w400,
+              Padding(
+                padding: EdgeInsets.only(top: height * 0.04),
+                child: Center(
+                  child: Text(
+                    "Lorem ipsum dolor sit amet",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: homeBgColor,
+                      fontFamily: 'Bambino',
+                      letterSpacing: 0.5,
+                      fontSize: ScreenUtil().setSp(60),
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: height * 0.01),
-              child: Center(
-                child: Text(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                  style: GoogleFonts.josefinSans(
-                    color: Colors.white,
-                    fontSize: ScreenUtil().setSp(70),
-                    fontWeight: FontWeight.w700,
+              Padding(
+                padding: EdgeInsets.only(top: height * 0.01),
+                child: Center(
+                  child: Text(
+                    "Lorem ipsum dolor sit amet consectetur adipiscing elit, Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                    style: GoogleFonts.openSans(
+                      color: fadeTextColor,
+                      fontSize: ScreenUtil().setSp(45),
+                      fontWeight: FontWeight.w300,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
