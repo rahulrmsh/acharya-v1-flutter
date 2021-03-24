@@ -10,6 +10,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  final height = ScreenUtil().setHeight(2400);
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context,
@@ -22,45 +23,32 @@ class _SplashScreenState extends State<SplashScreen> {
       child: SafeArea(
         child: Scaffold(
             backgroundColor: homeBgColor,
-            body: Column(
-              children: [
-                Stack(
+            body: Stack(
+              children: <Widget>[
+                Container(
+                  decoration: BoxDecoration(color: homeBgColor),
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    Container(
-                      decoration: BoxDecoration(color: mainBgColor),
+                    Center(
+                      child: Image(
+                        height: ScreenUtil().setHeight(820),
+                        image: AssetImage('assets/images/logoAv1.png'),
+                      ),
                     ),
-                    Container(
-                      color: mainBgColor,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.symmetric(vertical: 50),
-                            child: Center(
-                              child: CircleAvatar(
-                                backgroundColor: mainBgColor,
-                                backgroundImage:
-                                    AssetImage('assets/images/logoAv1.png'),
-                                radius: 100.0,
-                              ),
-                            ),
+                    Padding(
+                      padding: EdgeInsets.only(top: height * 0.015),
+                      child: Center(
+                        child: Text(
+                          "Acharya",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 50,
+                            fontWeight: FontWeight.w700,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 20),
-                            child: Center(
-                              child: Text(
-                                "Acharya",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 50,
-                                  fontFamily: 'JosefinSans-Semi',
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
                     ),
                   ],
