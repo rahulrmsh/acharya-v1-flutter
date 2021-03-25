@@ -50,7 +50,7 @@ class _StudentHomeScreenState extends State<StudentHomeScreen> {
               ),
               child: GestureDetector(
                 onTap: () {
-                  // Navigator.of(context).push(_createRoute());
+                  Navigator.pushNamed(context, 'preferences');
                 },
                 child: Icon(
                   FontAwesomeIcons.slidersH,

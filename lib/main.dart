@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'views/home/student.dart';
 import 'views/welcome/login/student.dart';
 import 'views/welcome/login/tutor.dart';
+import 'views/widgets/preferences.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,6 +32,7 @@ class _MainAppState extends State<MainApp> {
         'studentLogin': (context) => StudentLoginScreen(),
         'tutorLogin': (context) => TutorLoginScreen(),
         'studentHome': (context) => StudentHomeScreen(),
+        'preferences': (context) => PreferencesScreen(),
       },
     );
   }
