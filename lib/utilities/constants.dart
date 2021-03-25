@@ -73,3 +73,26 @@ final places = [
   'Prunedale',
   'Freedom',
 ];
+
+List<String> _subjects = [
+  'Business Collective Bargaining',
+  'Transportation - Marine Transportation',
+  'Agriculture Food Engineering',
+  'Space Sciences - Astrobiology',
+  'Literature - Poetry',
+  'Performing Arts Performance Poetry',
+  'Education Art Education',
+  'Chemical Engineering - Polymer Engineering',
+  'Chemistry - Immunochemistry',
+  'Visual Arts - Photography',
+  'Cultural Disability Studies',
+  'Philosophy Philosophy Of Engineering',
+  'Human Leisure Studies',
+  'Performing Arts - Music',
+  'Linguistics - Interlinguistics',
+  'Sociology Religion',
+  'Applied Theory',
+  'Computer Engineering',
+  'Architecture Design',
+  'Economics',
+];

@@ -185,15 +185,19 @@ We've Missed You''',
                     ],
                   ),
                 ),
-                Container(
-                  width: width,
-                  height: height * 0.08,
-                  decoration: BoxDecoration(
-                    color: homeBgColor,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Center(
-                    child: TextButton(
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, 'studentHome');
+                    print('Pressed');
+                  },
+                  child: Container(
+                    width: width,
+                    height: height * 0.08,
+                    decoration: BoxDecoration(
+                      color: homeBgColor,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Center(
                       child: Text(
                         'Login',
                         textAlign: TextAlign.center,
@@ -203,10 +207,6 @@ We've Missed You''',
                           fontWeight: FontWeight.w700,
                         ),
                       ),
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'studentHome');
-                        print('Pressed');
-                      },
                     ),
                   ),
                 )
